@@ -1,3 +1,4 @@
+/* General Styles */
 body, html {
     margin: 0;
     padding: 0;
@@ -8,6 +9,7 @@ body, html {
     width: 100%;
     height: 100%;
     -webkit-overflow-scrolling: touch;
+    touch-action: manipulation;
 }
 
 .scene, .final-scene {
@@ -19,8 +21,11 @@ body, html {
     justify-content: center;
     transition: all 1s ease-in-out;
     overflow: hidden;
+    flex-direction: column;
+    text-align: center;
 }
 
+/* Scene Backgrounds */
 .scene-1 {
     background: radial-gradient(circle, rgba(1,1,23,1) 0%, rgba(2,0,36,1) 70%);
     color: white;
@@ -41,14 +46,15 @@ body, html {
     color: white;
 }
 
+/* Typewriter Effect */
 .typewriter {
-    font-size: 1.5rem;
+    font-size: 5vw; /* Scaled for mobile screens */
     white-space: nowrap;
     overflow: hidden;
     border-right: 0.15em solid white;
     animation: typing 4s steps(30) 1s 1 normal both, blink-caret 0.75s step-end infinite;
-    text-align: center;
-    max-width: 90vw;
+    max-width: 80vw; /* Ensure text fits within the screen */
+    margin: 5vh auto; /* Centered text with some margin */
 }
 
 @keyframes typing {
@@ -86,7 +92,7 @@ body, html {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 50%;
+    height: 30vh; /* Scaled for mobile screens */
     background: url('grass.webp') repeat-x;
     background-size: contain;
     animation: bloom 5s ease-out;
@@ -95,22 +101,23 @@ body, html {
 /* Rainbow */
 .rainbow {
     position: absolute;
-    width: 80%;
-    height: 250px;
+    width: 80vw; /* Scaled for mobile */
+    height: 20vh;
     background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
     border-radius: 50%;
     opacity: 0.8;
     animation: rainbow 10s ease-in-out infinite;
     z-index: 1;
+    top: 10vh;
 }
 
 /* Sun */
 #sun {
     position: absolute;
-    bottom: 30px;
-    right: 30px;
-    width: 100px;
-    height: 100px;
+    bottom: 5vh;
+    right: 5vw;
+    width: 15vw;
+    height: 15vw;
     background: radial-gradient(circle, yellow, orange, red);
     border-radius: 50%;
     box-shadow: 0 0 20px rgba(255, 255, 0, 0.5);
@@ -128,21 +135,21 @@ body, html {
 }
 
 .final-photo {
-    max-width: 70%;
+    max-width: 60vw; /* Scaled for mobile */
     border-radius: 10px;
-    margin-top: 20px;
+    margin-top: 2vh;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
 }
 
 /* Media Queries for Further Optimization */
 @media screen and (max-width: 1080px) {
     .typewriter {
-        font-size: 1.3rem;
+        font-size: 4vw; /* Further reduced for smaller screens */
     }
     #sun {
-        width: 80px;
-        height: 80px;
-        bottom: 20px;
-        right: 20px;
+        width: 12vw;
+        height: 12vw;
+        bottom: 3vh;
+        right: 3vw;
     }
 }
