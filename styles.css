@@ -64,7 +64,7 @@ body, html {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: url('stars.png') repeat;
+    background: url('stars.jpg') repeat;
     background-size: cover;
     animation: twinkling 200s infinite linear;
 }
@@ -90,7 +90,7 @@ body, html {
     bottom: 0;
     width: 100%;
     height: 50%;
-    background: url('grass.png') repeat-x;
+    background: url('grass.webp') repeat-x;
     background-size: contain;
     animation: bloom 5s ease-out;
 }
@@ -141,7 +141,7 @@ body, html {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: url('fireflies.png') repeat;
+    background: url('fireflies.webp') repeat;
     background-size: contain;
     animation: fireflies 3s infinite alternate;
 }
