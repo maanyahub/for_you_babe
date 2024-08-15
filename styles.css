@@ -5,6 +5,9 @@ body, html {
     font-family: 'Arial', sans-serif;
     background-color: black;
     color: white;
+    width: 100%;
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
 }
 
 .scene, .final-scene {
@@ -15,6 +18,7 @@ body, html {
     align-items: center;
     justify-content: center;
     transition: all 1s ease-in-out;
+    overflow: hidden;
 }
 
 .scene-1 {
@@ -25,28 +29,26 @@ body, html {
 .scene-2 {
     background: linear-gradient(to bottom, #76c7c0, #d3ffce);
     color: #333;
-    overflow: hidden;
 }
 
 .scene-3 {
     background: #ffefd5;
     color: #222;
-    overflow: hidden;
 }
 
 .final-scene {
     background: #0d0d0d;
     color: white;
-    position: relative;
 }
 
 .typewriter {
-    font-size: 2rem;
+    font-size: 1.5rem;
     white-space: nowrap;
     overflow: hidden;
     border-right: 0.15em solid white;
     animation: typing 4s steps(30) 1s 1 normal both, blink-caret 0.75s step-end infinite;
     text-align: center;
+    max-width: 90vw;
 }
 
 @keyframes typing {
@@ -79,11 +81,6 @@ body, html {
     animation: shooting 5s infinite ease-in-out;
 }
 
-@keyframes shooting {
-    0% { background-position: -100vw 0; }
-    100% { background-position: 100vw 100vh; }
-}
-
 /* Blooming Garden */
 .flowers {
     position: absolute;
@@ -95,16 +92,11 @@ body, html {
     animation: bloom 5s ease-out;
 }
 
-@keyframes bloom {
-    0% { transform: scaleY(0); }
-    100% { transform: scaleY(1); }
-}
-
 /* Rainbow */
 .rainbow {
     position: absolute;
     width: 80%;
-    height: 400px;
+    height: 250px;
     background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
     border-radius: 50%;
     opacity: 0.8;
@@ -112,28 +104,17 @@ body, html {
     z-index: 1;
 }
 
-@keyframes rainbow {
-    0% { transform: translateX(-50%); opacity: 0; }
-    50% { opacity: 1; }
-    100% { transform: translateX(50%); opacity: 0; }
-}
-
 /* Sun */
 #sun {
     position: absolute;
-    bottom: 50px;
-    right: 50px;
-    width: 150px;
-    height: 150px;
+    bottom: 30px;
+    right: 30px;
+    width: 100px;
+    height: 100px;
     background: radial-gradient(circle, yellow, orange, red);
     border-radius: 50%;
     box-shadow: 0 0 20px rgba(255, 255, 0, 0.5);
     animation: pulse 3s infinite alternate;
-}
-
-@keyframes pulse {
-    0% { transform: scale(0.9); }
-    100% { transform: scale(1.1); }
 }
 
 /* Fireflies */
@@ -146,14 +127,22 @@ body, html {
     animation: fireflies 3s infinite alternate;
 }
 
-@keyframes fireflies {
-    0% { opacity: 0.5; }
-    100% { opacity: 1; }
-}
-
 .final-photo {
-    max-width: 300px;
+    max-width: 70%;
     border-radius: 10px;
     margin-top: 20px;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+/* Media Queries for Further Optimization */
+@media screen and (max-width: 1080px) {
+    .typewriter {
+        font-size: 1.3rem;
+    }
+    #sun {
+        width: 80px;
+        height: 80px;
+        bottom: 20px;
+        right: 20px;
+    }
 }
